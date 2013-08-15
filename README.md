@@ -1,4 +1,3 @@
-
                                       根据商品ID取价格或者其他促销信息
 *@method init
 *@param {String|HTMLElement} selector 选择器
@@ -48,7 +47,8 @@
 
    KISSY.add('mod/price',function(S){
 	var D = S.DOM, E = S.Event;
-	var API = '';  // 请求API 需要返回相应的信息
+	// 请求API 需要返回相应的信息
+	var API = '';  
 	var price = {
 		init: function(ids,callbackFunction){
 			var me = this;
