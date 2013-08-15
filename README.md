@@ -3,36 +3,33 @@ itemID
 
                                       根据商品ID取价格或者其他促销信息
 代码如下：
-
-   
-/****************************
 *@method init
 *@param {String|HTMLElement} selector 选择器
 ** 重构 price 兼容kissy1.1.6 
 * HTML结构如下
-	<ul class="J_Ul">
-		<li>
-			<a href="#" class="J_Items" data-shopIds = "">
-				<img src=""/>
-			</a>
-			<div class="">
-				<div class=""><em class="J_ItemNewPrice"></em></div>
-				<div class=""><em class="J_ItemOldPrice"></em></div>
-			</div>
-			<div class="">
-				<div class="">最近成交<em class="J_ItemSales"></em> | 已有<em class="J_ItemReviews"></em>条评论</div>
-			</div>
-			<div class="">
-				<i class="J_New">新品</i>
-				<i class="J_Hot">热卖</i>
-				<i class="J_Sales">促销</i>
-				<i class="J_Edm">包邮</i>
-			</div>
-		</li>
-	</ul>
-	<ul class="J_Ul">
-		.........
-	</ul>
+   <ul class="J_Ul">
+  	<li>
+		<a href="#" class="J_Items" data-shopIds = "">
+			<img src=""/>
+		</a>
+		<div class="">
+			<div class=""><em class="J_ItemNewPrice"></em></div>
+			<div class=""><em class="J_ItemOldPrice"></em></div>
+		</div>
+		<div class="">
+			<div class="">最近成交<em class="J_ItemSales"></em> | 已有<em class="J_ItemReviews"></em>条评论</div>
+		</div>
+		<div class="">
+			<i class="J_New">新品</i>
+			<i class="J_Hot">热卖</i>
+			<i class="J_Sales">促销</i>
+			<i class="J_Edm">包邮</i>
+		</div>
+	</li>
+    </ul>
+   <ul class="J_Ul">
+	.........
+   </ul>
     下面是注释 解释：
      * 必须提供一个板块容器 如上所示 class="J_Ul". 
      ** HTML结构可以随便写 但是要保证 板块里面有J_Items类名 对应的属性 data-shopIds(商品id),J_ItemNewPrice是必须的
@@ -46,6 +43,7 @@ itemID
 
      ** 这样做的好处是：1) 添加callback回调函数
 	    调用方式如下：
+	    
 	    var classes = D.query(".J_Kaixin"); 
 		KISSY.use('fp/price',function(S){
 			S.price.init({classes:classes},function(){
