@@ -6,11 +6,10 @@ itemID
 *@param {String|HTMLElement} selector 选择器
 * 重构 price 兼容kissy1.1.6 
 * HTML结构如下
+
    <ul class="J_Ul">
   	<li>
-		<a href="#" class="J_Items" data-shopIds = "">
-			<img src=""/>
-		</a>
+	    <a href="#" class="J_Items" data-shopIds = ""><img src=""/></a>
 		<div class="">
 			<div class=""><em class="J_ItemNewPrice"></em></div>
 			<div class=""><em class="J_ItemOldPrice"></em></div>
@@ -29,6 +28,7 @@ itemID
    <ul class="J_Ul">
 	.........
    </ul>
+   
     下面是注释 解释：
      * 必须提供一个板块容器 如上所示 class="J_Ul". 
      ** HTML结构可以随便写 但是要保证 板块里面有J_Items类名 对应的属性 data-shopIds(商品id),J_ItemNewPrice是必须的
@@ -39,12 +39,14 @@ itemID
      ** 以对象的方式传参数
      ** 这样做的好处是：1) 添加callback回调函数
 	    调用方式如下：
+	    
 	        var classes = D.query(".J_Kaixin"); 
 		KISSY.use('fp/price',function(S){
 			S.price.init({classes:classes},function(){
 				console.log(0);
 			});
 		});
+		
 
    KISSY.add('mod/price',function(S){
 	var D = S.DOM, E = S.Event;
