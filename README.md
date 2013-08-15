@@ -1,5 +1,4 @@
 
-
                                       根据商品ID取价格或者其他促销信息
 *@method init
 *@param {String|HTMLElement} selector 选择器
@@ -69,9 +68,7 @@
 			var callback = 'jsonp_hitao_'+this.idx++;
 			window[callback] = function(data){
 			   fn(data);
-			   try {delete window[ jsonpCallback ];} catch(e) { 
-					
-			   }
+			   try {delete window[ jsonpCallback ];} catch(e) {}
 			};
 			return callback;
 		},
