@@ -2,10 +2,9 @@ itemID
 ======
 
                                       根据商品ID取价格或者其他促销信息
-代码如下：
 *@method init
 *@param {String|HTMLElement} selector 选择器
-** 重构 price 兼容kissy1.1.6 
+* 重构 price 兼容kissy1.1.6 
 * HTML结构如下
    <ul class="J_Ul">
   	<li>
@@ -34,17 +33,13 @@ itemID
      * 必须提供一个板块容器 如上所示 class="J_Ul". 
      ** HTML结构可以随便写 但是要保证 板块里面有J_Items类名 对应的属性 data-shopIds(商品id),J_ItemNewPrice是必须的
      * 板块容器支持class  
-
      * . J_ItemNewPrice->价格(有促销就是促销价), J_ItemOldPrice->市场价, .J_ItemSales->最近成交, J_ItemReviews->评论 
        J_New -> 新品icon，J_Hot -> 热卖icon,J_Sales -> 促销icon, J_Edm -> 包邮icon
-
      *  其他的类名根据需求而定(可有可无，但是有的话 类名一定要和上面定于的一致)。
      ** 以对象的方式传参数
-
      ** 这样做的好处是：1) 添加callback回调函数
 	    调用方式如下：
-	    
-	    var classes = D.query(".J_Kaixin"); 
+	        var classes = D.query(".J_Kaixin"); 
 		KISSY.use('fp/price',function(S){
 			S.price.init({classes:classes},function(){
 				console.log(0);
