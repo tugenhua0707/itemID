@@ -1,5 +1,4 @@
-itemID
-======
+
 
                                       根据商品ID取价格或者其他促销信息
 *@method init
@@ -199,6 +198,6 @@ itemID
 	};
 	S.price = price;
 	return price;
-});
+   });
 
 
