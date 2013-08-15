@@ -1,14 +1,16 @@
-
-
+	
+					根据商品取相应的信息
+	
 /*
  *@method init
  *@param {String|HTMLElement} selector 选择器
  * 重构 price 兼容kissy1.1.6 
  * HTML结构如下
+
 	<ul class="J_Ul">
 		<li>
 			<a href="#" class="J_Items" data-shopIds = "">
-				<img src="http://img-api.allenm.me/230-280.png"/>
+				<img src=""/>
 			</a>
 			<div class="">
 				<div class=""><em class="J_ItemNewPrice"></em></div>
@@ -26,20 +28,19 @@
 		</li>
 	</ul>
 	<ul class="J_Ul">
-		.........
+	
 	</ul>
+	
      * 必须提供一个板块容器 如上所示 class="J_Ul". 
      * HTML结构可以随便写 但是要保证 板块里面有J_Items类名 对应的属性 data-shopIds(商品id),J_ItemNewPrice是必须的
      * 板块容器支持class  
-
      * . J_ItemNewPrice->价格(有促销就是促销价), J_ItemOldPrice->市场价, .J_ItemSales->最近成交, J_ItemReviews->评论 
        J_New -> 新品icon，J_Hot -> 热卖icon,J_Sales -> 促销icon, J_Edm -> 包邮icon
-
      *  其他的类名根据需求而定(可有可无，但是有的话 类名一定要和上面定于的一致)。
      * 以对象的方式传参数
-
      * 这样做的好处是：1) 添加callback回调函数
 	    调用方式如下：
+	    
 	    var classes = D.query(".J_Kaixin"); 
 		KISSY.use('fp/price',function(S){
 			S.price.init({classes:classes},function(){
@@ -47,9 +48,11 @@
 			});
 		});
 **/
+
 KISSY.add('mod/price',function(S) {
 	var D = S.DOM,
-	E = S.Event;
+	   E = S.Event;
+	var API = '';
 	var price = {
 		init: function(ids, callbackFunction) {
 			var me = this;
@@ -87,9 +90,9 @@ KISSY.add('mod/price',function(S) {
 				var shopId = D.attr(item, 'data-shopIds');
 				itemArr.push(shopId);
 			});
-			var api = 'http://qianxun.hitao.com/json/item/search_items.htm';
+		
 			KISSY.ajax({
-				url: api + "?nid=" + itemArr + "&n=20" + "&timestamp=" + S.now(),
+				url: API + "?nid=" + itemArr + "&n=20" + "&timestamp=" + S.now(),
 				dataType: 'jsonp',
 				jsonpCallback: this.getCallback(function(data) {
 					var count = data.count;
