@@ -13,7 +13,7 @@ itemID
 	<ul class="J_Ul">
 		<li>
 			<a href="#" class="J_Items" data-shopIds = "">
-				<img src="http://img-api.allenm.me/230-280.png"/>
+				<img src=""/>
 			</a>
 			<div class="">
 				<div class=""><em class="J_ItemNewPrice"></em></div>
@@ -33,6 +33,7 @@ itemID
 	<ul class="J_Ul">
 		.........
 	</ul>
+    下面是注释 解释：
      * 必须提供一个板块容器 如上所示 class="J_Ul". 
      ** HTML结构可以随便写 但是要保证 板块里面有J_Items类名 对应的属性 data-shopIds(商品id),J_ItemNewPrice是必须的
      * 板块容器支持class  
@@ -51,9 +52,8 @@ itemID
 				console.log(0);
 			});
 		});
-*****************************/
 
-KISSY.add('mod/price',function(S){
+   KISSY.add('mod/price',function(S){
 	var D = S.DOM, E = S.Event;
 	var API = '';  // 请求API 需要返回相应的信息
 	var price = {
