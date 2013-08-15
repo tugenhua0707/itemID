@@ -1,10 +1,10 @@
 	
-					根据商品ID取相应的信息
+					           根据商品ID取相应的信息
 	
 
-1.method init
-2.param {String|HTMLElement} selector 选择器
-3.HTML结构如下
+1.method init.
+2.param {String|HTMLElement} selector 选择器.
+3.HTML结构如下.
 
 	<ul class="J_Ul">
 	    <li>
